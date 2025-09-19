@@ -5,8 +5,30 @@ import java.util.Arrays;
 /**
  * https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
  * Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.
+ *
+ * This file solves the Max Counters problem:
+ *
+ * **Problem:**
+ * You have `N` counters, all starting at 0.
+ * You get a sequence of operations in array `A`:
+ * - If `A[i]` is between `1` and `N`, increase counter `A[i]` by 1.
+ * - If `A[i]` is `N + 1`, set all counters to the current maximum value.
+ *
+ * **Example:**
+ * Let `N = 5` and `A = [3, 4, 4, 6, 1, 4, 4]`.
+ *
+ * Step-by-step:
+ * 1. Increase counter 3: `[0, 0, 1, 0, 0]`
+ * 2. Increase counter 4: `[0, 0, 1, 1, 0]`
+ * 3. Increase counter 4: `[0, 0, 1, 2, 0]`
+ * 4. Set all to max (which is 2): `[2, 2, 2, 2, 2]`
+ * 5. Increase counter 1: `[3, 2, 2, 2, 2]`
+ * 6. Increase counter 4: `[3, 2, 2, 3, 2]`
+ * 7. Increase counter 4: `[3, 2, 2, 4, 2]`
+ *
+ * **Final result:** `[3, 2, 2, 4, 2]`
  */
-public class Lesson4_MaxCounters {
+public class Lesson4_MaxCounters_A_LazyUpdate {
 
 
     // caso 1 a[0] = 3 = [0,0,1,0,0] - la posicion 2 del vector (3-1) va a 1 index==i
@@ -93,6 +115,12 @@ public class Lesson4_MaxCounters {
 
     }
 
+    /**
+     * Lazy Update algorithms
+     *
+     * The second solution uses the lazy update technique, a well-known optimization for range updates.
+     * Instead of updating all counters immediately, it tracks the minimum value they should have and updates only when necessary.
+     */
 
 
 }

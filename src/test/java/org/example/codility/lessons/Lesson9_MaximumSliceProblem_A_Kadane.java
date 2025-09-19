@@ -1,11 +1,11 @@
 package org.example.codility.lessons;
 
-import java.util.Stack;
-
 /**
  * https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_profit/
+ * Aca modifique el algoritmo de kadane para que ademas de calcular la suma maxima, me de el mejor momento para comprar y vender una accion
+ *
  */
-public class Lesson9_MaximumSliceProblem {
+public class Lesson9_MaximumSliceProblem_A_Kadane {
 
     public static int solution(int[] A){
         // la mejor opcion
@@ -18,10 +18,10 @@ public class Lesson9_MaximumSliceProblem {
         int posibleMejorDiaCompra=0;
 
         for (int i=1; i<A.length; i++){
-            int profit=A[i]-precioMinimo;
+            int profitEndingHere=A[i]-precioMinimo;
 
-            if (profit>maxProfit){
-                maxProfit=profit;
+            if (profitEndingHere>maxProfit){
+                maxProfit=profitEndingHere;
                 diaVenta=i;
                 diaCompra=posibleMejorDiaCompra;
             }

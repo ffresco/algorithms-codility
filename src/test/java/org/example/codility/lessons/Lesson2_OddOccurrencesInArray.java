@@ -7,6 +7,15 @@ import java.util.Map;
 /**
  * https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/
  * retornar el numero en el vector que queda con parera impar ejemplo: {9, 3, 9, 3, 9, 7 , 9}) + " expected 7"
+ *
+ * This class finds the integer in an array that occurs an odd number of times.
+ *
+ * **How it works:**
+ * - It counts occurrences of each number using a `HashMap`.
+ * - Then, it finds and returns the number with an odd count.
+ *
+ * **Example:**
+ * For the array `{9, 3, 9, 3, 9, 7, 9}`, the number `7` occurs once (odd), so it returns `7`.
  */
 public class Lesson2_OddOccurrencesInArray {
 

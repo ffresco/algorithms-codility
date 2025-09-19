@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This class finds the first unique (non-repeated) integer in an array.
+ * It counts occurrences of each number, then returns the first number that appears only once.
+ * If all numbers are repeated, it returns -1.
+ * The main method demonstrates this with two example arrays.
+ */
 public class FirstUnique {
     public static int solution(int[] a) {
             Map<Integer, Integer> count = new HashMap<>();

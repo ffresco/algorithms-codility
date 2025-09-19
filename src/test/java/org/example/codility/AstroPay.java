@@ -2,7 +2,27 @@ package org.example.codility;
 
 import java.util.HashMap;
 import java.util.Map;
-// https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+
+/**
+ * Dadas dos cadenas numéricas S y T de la misma longitud, queremos transformar S en T mediante la siguiente operación:
+ *
+ * Elegir una posición i (0 ≤ i < n−1) y sumar 1 (mod 10) tanto al dígito S[i] como al dígito S[i+1].
+ *
+ * El objetivo es determinar la mínima cantidad de operaciones necesarias para que S se convierta en T.
+ * Si no es posible, devolver -1.
+ *
+ * Ejemplo con tu caso
+ * S = "2233"
+ * T = "5566"
+ *
+ *
+ * Operaciones en (0,1) → 2233 → 3343 → 4453 → 5563.
+ *
+ * Operaciones en (2,3) → 5563 → 5564 → 5565 → 5566.
+ *
+ * Total = 6 operaciones.
+ *
+ */
 public class AstroPay {
     public static int solution(String S, String T) {
         // Validación básica de igual longitud
@@ -70,3 +90,9 @@ public class AstroPay {
     }
 
 }
+
+//algoritmo se comporta como greedy porque:
+//En cada posición i solo intenta resolver localmente ese par (i, i+1).
+//Nunca vuelve atrás ni reconsidera decisiones anteriores.
+//Avanza linealmente, confiando en que resolver localmente cada par llevará a la solución global.
+//Eso es la definición de greedy: resolver el problema paso a paso tomando la mejor decisión local inmediata.

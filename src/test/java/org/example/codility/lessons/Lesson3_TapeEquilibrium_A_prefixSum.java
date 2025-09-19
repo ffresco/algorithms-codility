@@ -1,13 +1,14 @@
 package org.example.codility.lessons;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/
- * retornar el numero en el vector que queda con parera impar ejemplo: {9, 3, 9, 3, 9, 7 , 9}) + " expected 7"
+ *
+ * This code solves the Tape Equilibrium problem using a prefix sum approach.
+ * It is a standard algorithmic technique for efficiently calculating sums of subarrays and their differences.
+ * Prefix sums are commonly used in array partitioning and equilibrium problems.
+ * So yes, it uses a well-known algorithmic method.
  */
-public class Lesson3_TapeEquilibrium {
+public class Lesson3_TapeEquilibrium_A_prefixSum {
 
     public static int solution(int[] A) {
         // Compute total sum using a larger type to avoid overflow

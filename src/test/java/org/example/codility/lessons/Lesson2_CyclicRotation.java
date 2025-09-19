@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 /**
  * https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+ *
+ * This class provides two methods to rotate the elements of an integer array `A` to the right by `K` positions.
+ * Each element is moved to a new index calculated by `(current index + K) % array length`, so the array wraps around in a circular fashion.
+ * The result is a new array with the elements shifted right by `K` places.
  */
 public class Lesson2_CyclicRotation {
 

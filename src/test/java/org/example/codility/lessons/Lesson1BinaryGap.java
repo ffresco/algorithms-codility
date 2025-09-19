@@ -5,6 +5,17 @@ import java.util.Set;
 import java.util.TreeSet;
 
 // https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+
+/**
+ * This algorithm finds the length of the longest binary gap in a positive integer `n`.
+ * A binary gap is a maximal sequence of consecutive zeros surrounded by ones in the binary representation of `n`.
+ *
+ * Steps:
+ * 1. Converts `n` to its binary representation as an array of digits.
+ * 2. Iterates through the array, counting zeros between ones.
+ * 3. Stores the lengths of gaps found.
+ * 4. Returns the length of the longest gap, or 0 if none exist.
+ */
 public class Lesson1BinaryGap {
 
     public static int solution(int n) {
@@ -66,3 +77,4 @@ public class Lesson1BinaryGap {
     }
 
 }
+

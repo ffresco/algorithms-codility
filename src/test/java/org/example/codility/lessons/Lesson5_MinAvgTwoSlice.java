@@ -10,9 +10,9 @@ public class Lesson5_MinAvgTwoSlice {
     /**
      * uno hacer manualmente una tabla viendo el promedio tomanod slice de 2 pares y luego otra tomando slice de 3 pares
      * Con esto demuestro que cubro todos los casos, por que cuqquier slice mas grande, puede ser formado por sublice de 2 o 3, ejemplo
-     * Slice de 4, son dos sublice, de 2 y dos de 3 dejando fuera un elemento, Entonces no puede haber un menor
+     * Slice de 4, son dos sublice, de 2 o dos compuestos asi (uno de 3 dejando fuera un elemento), Entonces no puede haber un menor
      *
-     *  cualquier slice más largo (de 4 o más elementos) puede ser subdividido en slices de 2 o 3 elementos, y al menos uno de esos sub-slices tendrá un promedio menor o igual que el promedio total.
+     *  Algoritmo MinAvgTwoSlice = cualquier slice más largo (de 4 o más elementos) puede ser subdividido en slices de 2 o 3 elementos, y al menos uno de esos sub-slices tendrá un promedio menor o igual que el promedio total.
      *
      * Pregunta entrevistas conclusion
      * 🔹 Buscar solo en slices de tamaño 2 y 3 garantiza el resultado correcto.
