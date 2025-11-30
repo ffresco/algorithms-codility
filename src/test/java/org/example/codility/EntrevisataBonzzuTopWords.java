@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.TreeMap;
 
 /**
  * Code Challenge
@@ -99,6 +100,9 @@ public class EntrevisataBonzzuTopWords {
         while (!maxHeap.isEmpty()) {
             System.out.println(maxHeap.poll()); // 20, 10, 5, 1
         }
+
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+
     }
 
 

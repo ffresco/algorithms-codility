@@ -1,13 +1,7 @@
 package org.example.others;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.OptionalInt;
-import java.util.Queue;
+import org.example.Persona;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -58,15 +52,15 @@ public class CodeSnippets {
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
 
         //5-Filter and transform
-                List<String> filtered = names.stream()
-                        .filter(s -> s.length() > 3)
-                        .map(String::toUpperCase)
-                        .collect(Collectors.toList());
+        List<String> filtered = names.stream()
+                .filter(s -> s.length() > 3)
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
 
         // Numeric operations
-                List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
-                int sum = nums.stream().mapToInt(Integer::intValue).sum();
-                OptionalInt max = nums.stream().mapToInt(Integer::intValue).max();
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+        int sum = nums.stream().mapToInt(Integer::intValue).sum();
+        OptionalInt max = nums.stream().mapToInt(Integer::intValue).max();
 
 
         //6-Define predicates
@@ -74,21 +68,38 @@ public class CodeSnippets {
         Predicate<String> startsWithA = s -> s.startsWith("A");
 
         // Using predicates with streams
-                List<Integer> numbersLists = Arrays.asList(1, 2, 3, 4, 5);
-                List<Integer> evenNumbers = numbersLists.stream()
-                        .filter(isEven)
-                        .collect(Collectors.toList());
+        List<Integer> numbersLists = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> evenNumbers = numbersLists.stream()
+                .filter(isEven)
+                .collect(Collectors.toList());
 
         // Combining predicates
-                Predicate<Integer> greaterThan3 = n -> n > 3;
-                List<Integer> evenAndGreaterThan3 = numbersLists.stream()
-                        .filter(isEven.and(greaterThan3))
-                        .collect(Collectors.toList());
+        Predicate<Integer> greaterThan3 = n -> n > 3;
+        List<Integer> evenAndGreaterThan3 = numbersLists.stream()
+                .filter(isEven.and(greaterThan3))
+                .collect(Collectors.toList());
 
+        //7 Order personas with comparators
 
+        List<Persona> personas = Arrays.asList(
+                new Persona("Alice", 30, "123 St"),
+                new Persona("Bob", 25, "456 St"),
+                new Persona("Charlie", 30, "789 St")
+        );
+
+        // Sort by age
+        //personas.sort(Comparator.comparingInt(Persona::getEdad));
+        //personas.sort((p1, p2) -> Integer.compare(p1.getEdad(), p2.getEdad()));
+
+        // Sort by age and name
+        personas.sort((p1, p2) -> {
+            int cmp = Integer.compare(p1.getEdad(), p2.getEdad());
+            if (cmp != 0) return cmp;
+            return p1.getNombre().compareTo(p2.getNombre());
+        });
+        personas.sort(Comparator.comparingInt((Persona p) -> p.getEdad()).thenComparing((Persona p) -> p.getNombre()));
 
 
     }
-
 }
 
